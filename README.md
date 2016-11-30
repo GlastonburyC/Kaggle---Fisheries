@@ -14,4 +14,8 @@ Kaggle competition to assign a probability that an image contains one of eight c
 
 # Approach:
 
-First identify where the fish/es are in each image. To do this, I have adapted the Viola-Jones face recognition algorithm. By using the NoF category as a negative test set, and all other images as a positive test set.
+First: identify where the fish/es are in each image. To do this, I have adapted the Viola-Jones face recognition algorithm. By using the NoF category as a negative test set, and all other images as a positive test set.
+
+Second: Further QC? greyscale? - smooth noise? - Collate covariates - Area, Perimeter, Diameter, Variance, Uniformity & Entropy co-occurance
+
+Third: Train a convolutional neural network to perform species recognition using labels [1-8].
