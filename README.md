@@ -1,5 +1,4 @@
-# Kaggle---Fisheries
-Multiple Fish species detection 
+# Kaggle---Fisheries multi-species fish detection (Image recognition problem)
 
 Kaggle competition to assign a probability that an image contains one of eight catagories:
 
