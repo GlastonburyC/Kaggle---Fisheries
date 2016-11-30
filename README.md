@@ -3,14 +3,14 @@ Multiple Fish species detection
 
 Kaggle competition to assign a probability that an image contains one of eight catagories:
 
-1) ALB
-2) BET
-3) DOL
-4) LAG
-5) NoF (No fish)
-6) Other - (unidentified species)
-7) SHARK
-8) YFT
+1. ALB
+2. BET
+3. DOL
+4. LAG
+5. NoF (No fish)
+6. Other - (unidentified species)
+7. SHARK
+8. YFT
 
 # Approach:
 
