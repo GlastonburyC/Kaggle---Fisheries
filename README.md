@@ -14,8 +14,10 @@ Kaggle competition to assign a probability that an image contains one of eight c
 
 # Approach:
 
-First: identify where the fish/es are in each image. To do this, I have adapted the Viola-Jones face recognition algorithm. By using the NoF category as a negative test set, and all other images as a positive test set.
+First: identify where the fish/es are in each image. To do this, I adapted the Viola-Jones face recognition algorithm. By using the NoF category as a negative test set, and all other images as a positive test set.
 
-Second: Further QC? greyscale? - smooth noise? - Collate covariates - Area, Perimeter, Diameter, Variance, Uniformity & Entropy co-occurance
+This apporach failed to identify bounding boxes around fish, possibly because the signal to noise ratio (SNR) in each image is so high. Another apprach to test would be to apply a convolutional neural network such as DetectNet or OverFeat. The objective here is to minimise noise, as classifying the fish should be easier than classifying the entire image with many non-useful features.
 
-Third: Train a convolutional neural network to perform species recognition using labels [1-8].
+The approach I have currently implemented simply classifies the whole image (resized to 299 x 299), using a transfer learning approach. The convolutional neural network (CNN) I'm using is the Inception V3 CNN trained on ImageNet. As training a deep CNN like Inception V3 is expensive, I am using trasnfer learning, in which only the top layer is removed and replaced with a dense softmax layer. The softmax function allows the output of normalised probabilities (summing to one) and is suitable for cases when labels are mutually exclusive. In addition to this, I am also using image augmentation to make the CNN more robust to scaling, normalisation, shifts, rotations and shear. 
+
+Further work will involved splitting not just into training and validation, but two validation sets, or k-fold cross validation.
