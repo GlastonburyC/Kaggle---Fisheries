@@ -21,3 +21,5 @@ This apporach failed to identify bounding boxes around fish, possibly because th
 The approach I have currently implemented simply classifies the whole image (resized to 299 x 299), using a transfer learning approach. The convolutional neural network (CNN) I'm using is the Inception V3 CNN trained on ImageNet. As training a deep CNN like Inception V3 is expensive, I am using transfer learning, in which only the top layer is removed and replaced with a dense softmax layer. The softmax function allows the output of normalised probabilities (summing to one) and is suitable for cases when labels are mutually exclusive. In addition to this, I am also using image augmentation to make the CNN more robust to scaling, normalisation, shifts, rotations and shear. 
 
 Further work will involved splitting not just into training and validation, but two validation sets, or k-fold cross validation.
+
+Use: https://github.com/facebook/fb.resnet.torch/tree/master/pretrained to extract fishes from whole images
