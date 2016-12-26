@@ -25,4 +25,4 @@ Further work will involved splitting not just into training and validation, but 
 Use: https://github.com/facebook/fb.resnet.torch/tree/master/pretrained to extract fishes from whole images
 
 
-![alt tag](https://raw.githubusercontent.com/GlastonburyC/Kaggle---Fisheries/master/Screen Shot 2016-12-26 at 01.52.06.png)
+![alt tag](https://raw.githubusercontent.com/GlastonburyC/Kaggle---Fisheries/master/Screen%20Shot%202016-12-26%20at%2002.08.52.png?token=AEA_SyfjdeHYyRLMjwSuwSXrwGt_O11nks5YaoSnwA%3D%3D)
