@@ -55,16 +55,15 @@ with tf.Session() as sess:
                                         show_suppressed=False)
         pred_anno.rects = rects
         annolist.append(pred_anno)
-        if i % 10 == 0 and i < 200:
-            pass
-            fig = plt.figure(figsize=(12, 12))
-            plt.imshow(new_img)
-            fig.savefig('output/image%s.png' %(i))
-            plt.close(fig)   # save the figure to file
-        if i % 100 == 0:
-            print(i)
-    avg_time = (time.time() - t) / (i + 1)
-    print('%f images/sec' % (1. / avg_time))
+        fig = plt.figure(figsize=(12, 12))
+        ax = plt.Axes(fig, [0., 0., 1., 1.])
+        plt.axis('off')
+        ax.set_axis_off()
+        fig.add_axes(ax)
+        plt.imshow(new_img)
+        fig.savefig('output/test_image_results/image%s.png' %(i))
+        plt.close(fig)   # save the figure to file
+
 
 #annolist.save(pred_json)
 #iou_threshold = 0.2
