@@ -23,3 +23,6 @@ The approach I have currently implemented simply classifies the whole image (res
 Further work will involved splitting not just into training and validation, but two validation sets, or k-fold cross validation.
 
 Use: https://github.com/facebook/fb.resnet.torch/tree/master/pretrained to extract fishes from whole images
+
+
+![alt tag](https://raw.githubusercontent.com/GlastonburyC/Kaggle---Fisheries/Screen Shot 2016-12-26 at 01.52.06.png)
