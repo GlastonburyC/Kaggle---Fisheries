@@ -16,7 +16,7 @@ from evaluate import add_rectangles
 import cv2
 
 hypes_file = './hypes/lstm_rezoom.json'
-iteration = 30000
+iteration = 10000
 with open(hypes_file, 'r') as f:
     H = json.load(f)
 
@@ -39,10 +39,10 @@ else:
 saver = tf.train.Saver()
 with tf.Session() as sess:
     sess.run(tf.initialize_all_variables())
-    saver.restore(sess, '/home/craig/Desktop/tensorbox/output/lstm_rezoom_2016_12_24_22.13/save.ckpt-10000')
+    saver.restore(sess, '/home/craig/Desktop/tensorbox/output/lstm_rezoom_2016_12_26_00.02/save.ckpt-30000')
     annolist = al.AnnoList()
     import time; t = time.time()
-    for i in range(0, 500):
+    for i in range(0, len(true_annos)):
         true_anno = true_annos[i]
         img = imread('./new_labels/%s' % true_anno.imageName)
         feed = {x_in: img}
