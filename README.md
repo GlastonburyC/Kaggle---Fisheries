@@ -32,3 +32,6 @@ Use: https://github.com/facebook/fb.resnet.torch/tree/master/pretrained to extra
 
 ![alt tag](https://raw.githubusercontent.com/GlastonburyC/Kaggle---Fisheries/master/Screen%20Shot%202016-12-26%20at%2002.09.05.png?token=AEA_S9Rb2nN05gvJ6X2Aya32oTF3A1ITks5YaoUAwA%3D%3D)
 
+Best so far, 1000 augmentations of all cropped images and all original images scaled to 299 x 299.
+Mean of crops from each image performs better than maximum probability.
+
