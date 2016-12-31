@@ -18,7 +18,7 @@ FishNames = ['ALB_fish', 'BET_fish', 'DOL_fish', 'LAG_fish', 'NoF_fish', 'OTHER_
 root_path = '/home/craig/Desktop/tensorbox/'
 weights_path = '/home/craig/Desktop/tensorbox/new_labels/fishbbox_plus_whole.weights.h5'
 
-test_data_dir = os.path.join(root_path,'data/test_stg1/')
+test_data_dir = os.path.join(root_path,'test_stg1_960x640/')
 
 # test data generator for prediction
 test_datagen = ImageDataGenerator(
@@ -33,16 +33,19 @@ test_datagen = ImageDataGenerator(
 
 print('Loading model and weights from training process ...')
 InceptionV3_model = load_model(weights_path)
-
+random_seed=[]
 for idx in range(nbr_augmentation):
     print('{}th augmentation for testing ...'.format(idx))
-    random_seed = np.random.random_integers(0, 100000)
+    if idx == 0:
+       random_seed.append(np.random.random_integers(0, 1000000))
+    else:
+        random_seed.insert(idx,np.random.random_integers(0, 1000000))    
     test_generator = test_datagen.flow_from_directory(
             test_data_dir,
             target_size=(img_width, img_height),
             batch_size=batch_size,
             shuffle = False, # Important !!!
-            seed = random_seed,
+            seed = random_seed[idx],
             classes = None,
             class_mode = None)
     test_image_list = test_generator.filenames
@@ -56,6 +59,11 @@ for idx in range(nbr_augmentation):
 predictions /= nbr_augmentation
 
 print('Begin to write submission file ..')
+seed_submit=open(os.path.join(root_path, 'seed.csv'), 'w')
+for item in random_seed:
+    seed_submit.write("%s\n" % item)
+
+
 f_submit = open(os.path.join(root_path, 'submit.csv'), 'w')
 f_submit.write('image,ALB,BET,DOL,LAG,NoF,OTHER,SHARK,YFT\n')
 for i, image_name in enumerate(test_image_list):
