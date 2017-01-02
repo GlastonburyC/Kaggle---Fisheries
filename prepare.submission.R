@@ -3,13 +3,14 @@ library(gtools)
 sub=read.table('submit.csv',head=T,sep=",")
 sub=sub[mixedorder(sub[,1]),]
 sub$images = unlist(lapply(sub[,1],function(x) strsplit(as.character(x),"_r")[[1]][1]))
+sub$images=gsub('.jpg','',sub$images)
 
 sub_final=aggregate(sub[c('ALB','BET','DOL','LAG','NoF','OTHER','SHARK','YFT')], by=sub['images'], mean)
 
 colnames(sub_final)[1]="image"
 sub_final$image=paste0(sub_final$image,".jpg")
 
-write.table(sub_final,"submit.mean.aug10000.csv",sep=",",quote=F,col.names=T,row.names=F)
+write.table(sub_final,"submit.test.csv",sep=",",quote=F,col.names=T,row.names=F)
 
 
 #max_prob=as.matrix(apply(sub[,2:(ncol(sub)-1)], 1, function(x) max(x)))
