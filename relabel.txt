@@ -1,4 +1,3 @@
-NoF/img_07847_resized.jpg,ALB
 NoF/img_07724_resized.jpg,YFT
 NoF/img_00028_resized.jpg,ALB
 NoF/img_00076_resized.jpg,ALB
