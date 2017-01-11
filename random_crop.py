@@ -1,14 +1,11 @@
-# Cuts random tiles from pictures
-#
-
 import random, os, time
 from PIL import Image
 
-INPATH = r".../images"
-OUTPATH = r".../tiles"
+INPATH = r"NoF"
+OUTPATH = r"NoF_fish"
 
 dx = dy = 299
-tilesPerImage = 5
+tilesPerImage = 4
 
 files = os.listdir(INPATH)
 numOfImages = len(files)
