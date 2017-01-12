@@ -45,7 +45,7 @@ for i,entry in enumerate(all_json):
 			#else:
 			im_file = all_json[i]['image_path'].split('.')[0]
 			image_resized = misc.imresize(sub_img, (299,299))
-			cv2.imwrite('../debug_img_quality/score%s_%s_box%s.jpg' %(score,im_file,str(j)),image_resized)
+			cv2.imwrite('../test_stg1_bbox/test_stg1_bbox/%s_box%s.jpg' %(im_file,str(j)),image_resized)
 			print str(score)+'\n'
 			a = 1
 	if (a == 0):
@@ -72,5 +72,9 @@ for i,entry in enumerate(all_json):
 		else:
 			im_file = all_json[i]['image_path'].split('.')[0]
 			image_resized = misc.imresize(sub_img, (299,299))
-			cv2.imwrite('../debug_img_quality/score%s_%s_box%s.jpg' %(score,im_file,str(j)),image_resized)
+			cv2.imwrite('../test_stg1_bbox/test_stg1_bbox/%s_box%s.jpg' %(im_file,str(j)),image_resized)
 			print str(score)+'\n'
+
+
+
+
