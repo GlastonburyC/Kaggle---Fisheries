@@ -14,6 +14,7 @@ with open('30000_960x640_val_lstm_rezoom.json') as data_file:
 	all_json = json.load(data_file)
 
 
+all_scores_60=[]
 
 for i,entry in enumerate(all_json):
 	img_score_list=[]
@@ -36,45 +37,43 @@ for i,entry in enumerate(all_json):
 		x2 = int(round(all_json[i]['rects'][j]['x2']))
 		if x2 < 0:
 			x2 = 0
-		if score >= 0.7:
+		if score >= 0.70:
 			sub_img = img[y1:y2,x1:x2]
 			height, width, channels = sub_img.shape
 			#if height < 30 and width < 30:
 			#	next
 				# removing errors when manually annotating thousands of fish...
 			#else:
-			im_file = all_json[i]['image_path'].split('.')[0]
+			im_file = all_json[i]['image_path']
 			image_resized = misc.imresize(sub_img, (299,299))
-			cv2.imwrite('../test_stg1_bbox/test_stg1_bbox/%s_box%s.jpg' %(im_file,str(j)),image_resized)
+			cv2.imwrite('../debug_img_quality/%s_box%s.jpg' %(im_file,str(j)),image_resized)
 			print str(score)+'\n'
 			a = 1
-	if (a == 0):
-		j = img_score_list.index(max(img_score_list))
-		y1 = int(round(all_json[i]['rects'][j]['y1']))
-		if y1 < 0:
-			y1 = 0
-		y2 = int(round(all_json[i]['rects'][j]['y2']))
-		if y2 < 0:
-			y2 = 0
-		x1 = int(round(all_json[i]['rects'][j]['x1']))
-		if x1 < 0:
-			x1 = 0
-		x2 = int(round(all_json[i]['rects'][j]['x2']))
-		if x2 < 0:
-			x2 = 0
-		#if score > 0.7:
-		score = all_json[i]['rects'][j]['score']
-		sub_img = img[y1:y2,x1:x2]
-		height, width, channels = sub_img.shape
-		if height < 30 and width < 30:
-			next
-				# removing errors when manually annotating thousands of fish...
-		else:
-			im_file = all_json[i]['image_path'].split('.')[0]
-			image_resized = misc.imresize(sub_img, (299,299))
-			cv2.imwrite('../test_stg1_bbox/test_stg1_bbox/%s_box%s.jpg' %(im_file,str(j)),image_resized)
-			print str(score)+'\n'
+		if (a == 0):
+			j = img_score_list.index(max(img_score_list))
+			y1 = int(round(all_json[i]['rects'][j]['y1']))
+		 	if y1 < 0:
+		 		y1 = 0
+		 	y2 = int(round(all_json[i]['rects'][j]['y2']))
+		 	if y2 < 0:
+		 		y2 = 0
+		 	x1 = int(round(all_json[i]['rects'][j]['x1']))
+		 	if x1 < 0:
+		 		x1 = 0
+		 	x2 = int(round(all_json[i]['rects'][j]['x2']))
+		 	if x2 < 0:
+		 		x2 = 0
+		 	if score >= 0.6:
+			 	score = all_json[i]['rects'][j]['score']
+			 	sub_img = img[y1:y2,x1:x2]
+			 	height, width, channels = sub_img.shape
+		 		im_file = all_json[i]['image_path']
+		 		image_resized = misc.imresize(sub_img, (299,299))
+		 		cv2.imwrite('../debug_img_quality/%s_box%s.jpg' %(im_file,str(j)),image_resized)
+		 		print str(score)+'\n'
+		 		all_scores_60.append(im_file)
+		 	else:
+		 		next
 
-
-
+len(all_scores_60)
 
