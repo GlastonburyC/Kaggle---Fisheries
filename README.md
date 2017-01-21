@@ -1,9 +1,7 @@
 # Kaggle: Fisheries multi-species fish detection 
 # (Image recognition problem)
 
-The latest k-fold cross-validation weights are in train_relabelled/ and new_labels/. They are 45 epoch runs with 960x640 bbox predictiond using high confidence assignment IOU = 0.70
-
-weights0,1,2,3.h5
+The latest 3-fold cross-validation weights are 'bbox_weights0.h5' - training on bounding boxes and whole images with the relabelled images (using the relabelling scripts). bbox of test data is only 0.70 score or higher.
 
 
 Kaggle competition to assign a probability that an image contains one of eight catagories:
