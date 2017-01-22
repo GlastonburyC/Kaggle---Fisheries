@@ -2,7 +2,7 @@ NoF/img_07724_resized.jpg,BET
 NoF/img_00028_resized.jpg,ALB
 NoF/img_00076_resized.jpg,ALB
 NoF/img_00673_resized.jpg,ALB
-NoF/img_00819_resized.jpg,YFT
+NoF/img_00819_resized.jpg,BET
 NoF/img_00904_resized.jpg,ALB
 NoF/img_01120_resized.jpg,ALB
 NoF/img_01305_resized.jpg,ALB
@@ -19,7 +19,7 @@ NoF/img_04162_resized.jpg,ALB
 NoF/img_04590_resized.jpg,ALB
 NoF/img_04615_resized.jpg,ALB
 NoF/img_04847_resized.jpg,ALB
-NoF/img_05865_resized.jpg,YFT
+NoF/img_05865_resized.jpg,BET
 NoF/img_06031_resized.jpg,ALB
 NoF/img_06266_resized.jpg,YFT
 NoF/img_06402_resized.jpg,ALB
