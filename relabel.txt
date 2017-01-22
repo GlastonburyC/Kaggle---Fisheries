@@ -1,4 +1,4 @@
-NoF/img_07724_resized.jpg,YFT
+NoF/img_07724_resized.jpg,BET
 NoF/img_00028_resized.jpg,ALB
 NoF/img_00076_resized.jpg,ALB
 NoF/img_00673_resized.jpg,ALB
