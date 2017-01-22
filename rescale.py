@@ -2,6 +2,7 @@ import os
 from scipy import ndimage, misc
 import scipy.misc
 import re,glob
+import cv2
 test_imgs = glob.glob("test_stg1/*.jpg")
 
 for filename in test_imgs:
