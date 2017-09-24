@@ -62,7 +62,7 @@ print('Adding Average Pooling Layer and Softmax Output Layer ...')
 output = InceptionV3_notop.get_layer(index = -1).output
 output = MaxPooling2D((8, 8), strides=(8, 8), name='max_pool')(output)
 output = Flatten(name='flatten')(output)
-output = Dense(2, activation='softmax', name='predictions')(output)
+output = Dense(8, activation='softmax', name='predictions')(output)
 
 InceptionV3_model = Model(InceptionV3_notop.input, output)
 
